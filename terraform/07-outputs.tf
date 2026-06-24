@@ -1,3 +1,3 @@
 output "COLA_B_URL" {
-  value = local.arn_cola_destino
+  value =  aws_sqs_queue.cola_destino.arn
 }

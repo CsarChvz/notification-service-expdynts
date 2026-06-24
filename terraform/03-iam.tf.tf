@@ -68,7 +68,7 @@ resource "aws_iam_role_policy" "pipe_policy" {
         "sqs:ReceiveMessage", 
         "sqs:DeleteMessage", 
         "sqs:GetQueueAttributes"]
-        Resource = local.arn_cola_destino
+        Resource = aws_sqs_queue.cola_destino.arn
       },
       {
         # Permisos para invocar la Lambda de Enriquecimiento

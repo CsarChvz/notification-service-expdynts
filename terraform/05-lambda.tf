@@ -26,9 +26,7 @@ module "lambda_function" {
   lambda_role = aws_iam_role.lambda_role.arn
 
   environment_variables = {
-    DATABASE_URL      = var.database_url
-    CONCURRENCY_LIMIT = 10
-    CHUNK_DELAY_MS    = 50
-    LAMBDA_TIMEOUT_MS = 290000
+    DATABASE_URL      = data.aws_ssm_parameter.db_url.value
+    NOTIFICATION_URL  = data.aws_ssm_parameter.notification_url.value
   }
 }

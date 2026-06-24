@@ -2,7 +2,7 @@ resource "aws_pipes_pipe" "notification_pipe" {
   name     = "${var.project_prefix}-pipe"
   role_arn = aws_iam_role.pipe_role.arn
 
-  source = local.arn_cola_destino
+  source = aws_sqs_queue.cola_destino.arn
   source_parameters {
     sqs_queue_parameters {
       batch_size = 2 

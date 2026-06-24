@@ -10,8 +10,16 @@ variable "project_prefix" {
   default     = "notification-service-expdynts"
 }
 
-variable "database_url" {
-  description = "URL de conexión a la base de datos"
-  type        = string
-  sensitive   = true
+
+variable "cola_destino" {
+  type    = string
+  default = "cola-destino"
+}
+
+data "aws_ssm_parameter" "db_url" {
+  name = "/config/database_url"
+}
+
+data "aws_ssm_parameter" "notification_url" {
+  name = "/config/notification_url"
 }
