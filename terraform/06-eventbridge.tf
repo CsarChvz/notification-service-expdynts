@@ -1,5 +1,5 @@
 resource "aws_pipes_pipe" "notification_pipe" {
-  name     = "${var.project_prefix}-pipe"
+  name     = "${var.service_prefix}-pipe"
   role_arn = aws_iam_role.pipe_role.arn
 
   source = aws_sqs_queue.cola_destino.arn
