@@ -1,3 +1,3 @@
 output "COLA_B_URL" {
-  value = locals.arn_cola_destino
+  value = local.arn_cola_destino
 }
