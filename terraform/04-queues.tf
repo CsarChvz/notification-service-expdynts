@@ -9,5 +9,5 @@ resource "aws_sqs_queue" "cola_destino" {
 }
 
 locals {
-  arn_cola = length(data.aws_sqs_queue.existente.arn) > 0 ? data.aws_sqs_queue.existente.arn : aws_sqs_queue.cola_destino[0].arn
+  arn_cola_destino = length(data.aws_sqs_queue.existente.arn) > 0 ? data.aws_sqs_queue.existente.arn : aws_sqs_queue.cola_destino[0].arn
 }
