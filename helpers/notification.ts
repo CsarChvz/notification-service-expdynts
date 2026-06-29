@@ -31,7 +31,7 @@ export async function sendTextNotification(phone: string, text: string): Promise
                 accept: 'application/json',
                 'Content-Type': 'application/json',
             },
-            timeout: 10000, 
+            timeout: 30000, 
         });
         return data;
     } catch (error) {
